@@ -1,7 +1,7 @@
 export default function Projects() {
   return (
-    <main className="max-w-2xl mx-auto px-6 py-16">
-      <h2 className="text-xl font-semibold">Projects</h2>
+    <main className="max-w-2xl mx-auto px-6 py-16 fade-in">
+      <h1 className="text-2xl font-semibold text-center">Projects</h1>
       <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <li>
           <a

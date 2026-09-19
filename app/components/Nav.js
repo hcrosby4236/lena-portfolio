@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 export default function Nav() {
   return (
-    <nav className="max-w-2xl mx-auto px-6 py-6 flex items-center justify-between">
+    <nav className=" mx-auto px-6 py-6 flex items-center justify-between fade-in">
       <div className="flex gap-6">
         <Link href="/" className="font-medium hover:underline">
           Home
