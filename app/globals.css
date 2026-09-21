@@ -22,6 +22,10 @@
   border-radius: 9999px;
   filter: blur(80px);
   opacity: 0.6;
+  animation-name: hueShift;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 .fade-in {
