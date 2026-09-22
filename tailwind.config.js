@@ -6,7 +6,13 @@ module.exports = {
     "./components/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        blinker: ["var(--font-blinker)", "cursive"],
+        reenieBeanie: ["var(--font-reenieBeanie)", "cursive"],
+        emilysCandy: ["var(--font-emilysCandy)", "cursive"],
+      }
+    },
   },
   plugins: [],
 };

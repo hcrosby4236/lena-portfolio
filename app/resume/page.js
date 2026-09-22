@@ -1,8 +1,8 @@
 export default function Resume() {
   return (
-    <main className="max-w-2xl mx-auto px-6 py-16 fade-in">
+    <main className="max-w-2xl mx-auto fade-in">
       <div className="flex items-center justify-between mb-10">
-        <h2 className="text-xl font-semibold">Resume</h2>
+        <h2 className="text-2xl font-semibold font-emilysCandy">Resume</h2>
         <a
           href="/resume.pdf"
           download
@@ -14,7 +14,7 @@ export default function Resume() {
 
       {/* Education */}
       <section className="mb-10">
-        <h3 className="text-lg font-semibold border-b pb-1 mb-3">Education</h3>
+        <h3 className="text-lg font-blinker font-semibold border-b pb-1 mb-3">Education</h3>
         <div className="flex justify-between">
           <div>
             <p className="font-medium">University of Central Florida</p>
@@ -29,7 +29,7 @@ export default function Resume() {
 
       {/* Experience */}
       <section className="mb-10">
-        <h3 className="text-lg font-semibold border-b pb-1 mb-3">Experience</h3>
+        <h3 className="text-lg font-blinker font-semibold border-b pb-1 mb-3">Experience</h3>
 
         <div className="mb-6">
           <div className="flex justify-between">
@@ -59,7 +59,7 @@ export default function Resume() {
 
       {/* Projects */}
       <section className="mb-10">
-        <h3 className="text-lg font-semibold border-b pb-1 mb-3">Projects</h3>
+        <h3 className="text-lg font-blinker font-semibold border-b pb-1 mb-3">Projects</h3>
 
         <div className="mb-6">
           <p className="font-medium">Debate Arena</p>
