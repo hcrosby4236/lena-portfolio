@@ -28,7 +28,7 @@ export default function CatGenerator() {
       <button
         onClick={getRandomCat}
         disabled={loading}
-        className="mt-4 font-reenieBeanie border rounded-lg px-4 py-2 font-medium"
+        className="mt-4 font-reenieBeanie border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg px-4 py-2 font-medium"
       >
         {loading ? "Fetching..." : "click me"}
       </button>

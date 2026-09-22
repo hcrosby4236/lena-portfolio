@@ -16,21 +16,21 @@ export default function Projects() {
   return (
     <main className="max-w-2xl mx-auto fade-in">
       <section>
-        <h1 className="text-3xl text-center font-emilysCandy font-semibold mb-6">Projects</h1>
-        <p className="text-gray-600 mb-6 tracking-wider">
+        <h1 className="text-3xl text-center font-ruwudu font-semibold mb-6">Projects</h1>
+        <p className="text-gray-600 font-gulzar mb-6 tracking-wider">
           Here are some of the projects I've worked on. Click the GitHub icon to view the source code for each project.
         </p>
       </section>
       <section className="mt-12">
-        <h2 className="text-xl font font-blinker font-semibold">Completed</h2>
+        <h2 className="text-xl font-ruwudu font-semibold">Completed</h2>
         <ul className="mt-4 space-y-4">
           <li className="flex items-center justify-between border-b pb-3">
             <div>
-              <h3 className="font-medium">Debate Arena</h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <h3 className="font-medium font-ruwudu">Debate Arena</h3>
+              <p className="text-sm font-gulzar text-gray-600 mt-1">
                 Multi-agent AI web app where three agents debate topics in real time
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm font-gulzar text-gray-600 mt-1">
                 Built for MLH Global Hack Week: Agents
               </p>
             </div>
@@ -46,8 +46,8 @@ export default function Projects() {
 
           <li className="flex items-center justify-between border-b pb-3">
             <div>
-              <h3 className="font-medium">School Planner</h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <h3 className="font-medium font-ruwudu">School Planner</h3>
+              <p className="text-sm font-gulzar text-gray-600 mt-1">
                 Desktop app for tracking assignments and class schedules
               </p>
             </div>
@@ -64,12 +64,12 @@ export default function Projects() {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-xl font font-blinker font-semibold">In Progress</h2>
+        <h2 className="text-xl font font-ruwudu font-semibold">In Progress</h2>
         <ul className="mt-4 space-y-4">
           <li className="flex items-center justify-between border-b pb-3">
             <div>
-              <h3 className="font-medium">This Portfolio Site</h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <h3 className="font-medium font-ruwudu">This Portfolio Site</h3>
+              <p className="text-sm font-gulzar text-gray-600 mt-1">
                 Next.js + React + Tailwind, built to learn and experiment
               </p>
             </div>
@@ -84,11 +84,11 @@ export default function Projects() {
           </li>
           <li className="flex items-center justify-between border-b pb-3">
             <div>
-              <h3 className="font-medium">Unnamed Discord Bot</h3>
-              <p className="text-sm text-gray-600 mt-1">
+              <h3 className="font-medium font-ruwudu">Unnamed Discord Bot</h3>
+              <p className="text-sm font-gulzar text-gray-600 mt-1">
                 Built with Discord.js, designed to provide fun and utility features for Discord servers
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm font-gulzar text-gray-600 mt-1">
                 Code currently private, but will be made public once the bot is more complete.
               </p>
             </div>

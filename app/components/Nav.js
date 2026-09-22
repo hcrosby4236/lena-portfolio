@@ -5,13 +5,13 @@ export default function Nav() {
   return (
     <nav className=" mx-auto px-6 py-6 flex items-center justify-between fade-in">
       <div className="flex gap-6">
-        <Link href="/" className=" font-medium font-emilysCandy text-xl hover:underline transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+        <Link href="/" className=" font-medium font-ruwudu text-xl hover:underline transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
           Home
         </Link>
-        <Link href="/projects" className="font-medium hover:underline font-emilysCandy text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+        <Link href="/projects" className="font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
         Projects
         </Link>
-        <Link href="/resume" className="font-medium hover:underline font-emilysCandy text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+        <Link href="/resume" className="font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
           Resume
         </Link>
       </div>

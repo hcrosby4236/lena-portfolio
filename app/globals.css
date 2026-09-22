@@ -1,6 +1,7 @@
-/* Fonts imported: Blinker, Reenie Beanie */
-@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap');
+/* Fonts imported: Reenie Beanie, Gulzar, Ruwudu */
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ruwudu:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;

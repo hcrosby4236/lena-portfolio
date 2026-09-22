@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        blinker: ["var(--font-blinker)", "cursive"],
-        reenieBeanie: ["var(--font-reenieBeanie)", "cursive"],
-        emilysCandy: ["var(--font-emilysCandy)", "cursive"],
+        reenie: ["var(--font-reenie)", "cursive"],
+        gulzar: ["var(--font-gulzar)", "cursive"],
+        ruwudu: ["var(--font-ruwudu)", "cursive"],
       }
     },
   },
