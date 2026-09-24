@@ -1,22 +1,24 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
+import DarkModeToggle from "./DarkModeToggle";
 
 export default function Nav() {
   return (
     <nav className=" mx-auto px-6 py-6 flex items-center justify-between fade-in">
       <div className="flex gap-6">
-        <Link href="/" className=" font-medium font-ruwudu text-xl hover:underline transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+        <Link href="/" className=" dark:text-white font-medium font-ruwudu text-xl hover:underline transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
           Home
         </Link>
-        <Link href="/projects" className="font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+        <Link href="/projects" className=" dark:text-white font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
         Projects
         </Link>
-        <Link href="/resume" className="font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+        <Link href="/resume" className="dark:text-white font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
           Resume
         </Link>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 ">
+        <DarkModeToggle />
         <a href="mailto:hcrosby4236@gmail.com" aria-label="Email me">
           <Mail className="w-5 h-5 text-black-600 hover:text-gray-900 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 " />
         </a>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Cat } from "lucide-react";
 
 export default function CatGenerator() {
   const [catUrl, setCatUrl] = useState(null);
@@ -14,23 +15,24 @@ export default function CatGenerator() {
   }
 
   return (
-    <div className="rounded-lg p-6 text-center">
-      {catUrl ? (
+    <div className="p-6 text-center">
+      {catUrl && (
+        <div className="h-80 flex items-center justify-center">
         <img
+          key={catUrl}
           src={catUrl}
           alt="Random cat"
-          className="mx-auto rounded-lg max-h-80 object-cover"
+          className="mx-auto max-h-80 max-w-full object-contain fade-in"
         />
-      ) : (
-        <p className="text-gray-500"></p>
+        </div>
       )}
 
       <button
         onClick={getRandomCat}
         disabled={loading}
-        className="mt-4 font-reenieBeanie border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg px-4 py-2 font-medium"
+        className="mt-4 text-blue-500 dark:text-white rounded-lg px-4 py-2 font-medium disabled:opacity-50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 "
       >
-        {loading ? "Fetching..." : "click me"}
+        {loading ? "meow.." : <Cat className="inline-block ml-2" />}
       </button>
     </div>
   );

@@ -5,8 +5,8 @@ export default function Home() {
     <main className="max-w-4xl mx-auto px-6 py-16 fade-in">
       <div className="flex flex-col sm:flex-row items-center gap-10">
         <div className="flex-1">
-          <h1 className="text-8xl font-reenie text-bold text-left">Hello!</h1>
-          <h2 className="text-4xl font-gulzar text-left mt-4">My Name is Helena!</h2>
+          <h1 className=" text-8xl font-reenie text-bold text-left dark:text-white">Hello!</h1>
+          <h2 className="text-4xl font-gulzar text-left mt-4 dark:text-gray-300">My Name is Helena!</h2>
         </div>
 
         <div className="flex-1 flex justify-center">
@@ -20,7 +20,7 @@ export default function Home() {
 
       <section className="mt-24 divide-black">
         <h2 className="text-2xl font-semibold font-ruwudu text-center tracking-wide">About Me</h2>
-        <p className="mt-4 text-black font-gulzar tracking-wide">
+        <p className="mt-4 dark:text-white text-black font-gulzar tracking-wide">
           I am currently studying at the Univeristy of Central Florida pursusing my bachelors in Computer Science. I am
           supposed to graduate in 2029. I transferred from Florida Southern College in Lakeland, where I was also pursing
           my bachelors in CS. My main focus is software engineering and full stack web development, but I would also really 

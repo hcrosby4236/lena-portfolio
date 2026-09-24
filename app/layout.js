@@ -3,8 +3,7 @@ import { Reenie_Beanie } from 'next/font/google';
 import { Gulzar } from 'next/font/google';
 import { Ruwudu } from 'next/font/google';
 import Nav from "./components/Nav";
-
-
+import { ThemeProvider } from "./context/ThemeContext";
 
 const reenie = Reenie_Beanie({
   subsets: ["latin"],
@@ -33,8 +32,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${reenie.variable} ${gulzar.variable} ${ruwudu.variable}`}>
-      <body className="bg-white text-gray-900 relative overflow-x-hidden">
+    <html lang="en" className={`${reenie.variable} ${gulzar.variable} ${ruwudu.variable}`} suppressHydrationWarning>
+      <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white relative overflow-x-hidden">
+        <ThemeProvider>
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div
             className="blob bg-blue-500 w-96 h-96 top-0 left-0"
@@ -56,6 +56,7 @@ export default function RootLayout({ children }) {
 
         <Nav />
         {children}
+       </ThemeProvider>
       </body>
     </html>
   );
