@@ -9,6 +9,9 @@ export default function Nav() {
         <Link href="/" className=" dark:text-white font-medium font-ruwudu text-xl hover:underline transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
           Home
         </Link>
+        <Link href="/about" className="dark:text-white font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
+          About
+        </Link>
         <Link href="/projects" className=" dark:text-white font-medium font-ruwudu hover:underline text-xl transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 text-black ">
         Projects
         </Link>

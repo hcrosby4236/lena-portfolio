@@ -18,11 +18,10 @@ export default function Projects() {
       <section>
         <h1 className="text-3xl text-center font-ruwudu font-semibold mb-6">Projects</h1>
         <p className="text-gray-600 font-gulzar mb-6 tracking-wider dark:text-gray-300">
-          Here are some of the projects I've worked on. Click the GitHub icon to view the source code for each project.
+          Here are the projects I've worked on. Click the GitHub icon to view the source code for each project.
         </p>
       </section>
       <section className="mt-12">
-        <h2 className="text-xl font-ruwudu font-semibold">Completed</h2>
         <ul className="mt-4 space-y-4">
           <li className="flex items-center justify-between border-b pb-3">
             <div>
@@ -46,26 +45,21 @@ export default function Projects() {
 
           <li className="flex items-center justify-between border-b pb-3">
             <div>
-              <h3 className="font-medium font-ruwudu">School Planner</h3>
+              <h3 className="font-medium font-ruwudu">Setlistics</h3>
               <p className=" dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Desktop app for tracking assignments and class schedules
+                A full-stack web app that turns concert setlist data into artist dashboards showing most-played songs, top touring cities, and tour-by-tour comparisons.
               </p>
             </div>
             <a
-              href="https://github.com/hcrosby4236/school-planner"
+              href="https://github.com/hcrosby4236/setlistics"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="View School Planner on GitHub"
+              aria-label="View Setlistics on GitHub"
             >
               {githubIcon}
             </a>
           </li>
-        </ul>
-      </section>
-
-      <section className="mt-12">
-        <h2 className="text-xl font font-ruwudu font-semibold">In Progress</h2>
-        <ul className="mt-4 space-y-4">
+      
           <li className="flex items-center justify-between border-b pb-3">
             <div>
               <h3 className="font-medium font-ruwudu">This Portfolio Site</h3>
@@ -84,15 +78,58 @@ export default function Projects() {
           </li>
           <li className="flex items-center justify-between border-b pb-3">
             <div>
-              <h3 className="font-medium font-ruwudu">Unnamed Discord Bot</h3>
+              <h3 className="font-medium font-ruwudu">School Planner</h3>
               <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Built with Discord.js, designed to provide fun and utility features for Discord servers
+                A desktop school planner built with Python, Tkinter, and SQLite for managing assignments, class schedules, and productivity. 
               </p>
               <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Code currently private, but will be made public once the bot is more complete.
+                Plan to rework into a web app at some point.
               </p>
             </div>
+            <a
+              href="https://github.com/hcrosby4236/school-planner"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View School Planner on GitHub"
+            >
+              {githubIcon}
+            </a>
             </li>
+          <li className="flex items-center justify-between border-b pb-3">
+            <div>
+              <h3 className="font-medium font-ruwudu">Python Console Games</h3>
+              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
+                A collection of interactive command-line games built with Python, featuring a branching adventure, cat simulator, and Rock, Paper, Scissors.
+              </p>
+            </div>
+            <a
+              href="https://github.com/hcrosby4236/python-console-games"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Python Console Games on GitHub"
+            >
+              {githubIcon}
+            </a>
+            </li>
+            <li className="flex items-center justify-between border-b pb-3">
+            <div>
+              <h3 className="font-medium font-ruwudu">Cat App</h3>
+              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
+                A fun JavaScript web app that generates random cat images using a simple interactive interface. 
+              </p>
+            </div>
+            <a
+              href="https://github.com/hcrosby4236/cat-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Cat App on GitHub"
+            >
+              {githubIcon}
+            </a>
+            </li>
+
+            
+            
         </ul>
       </section>
     </main>
