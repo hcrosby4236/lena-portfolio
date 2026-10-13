@@ -1,137 +1,21 @@
+import ProjectList from "../components/ProjectList";
+import { projects } from "../data/projects";
+
+export const metadata = { title: "Projects" };
+
 export default function Projects() {
-  const githubIcon = (
-    <svg viewBox="0 0 16 16" className="w-5 h-5 fill-current text-gray-600 hover:text-gray-900">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
-      -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
-      .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
-      0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82
-      .64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82
-      .44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
-      0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
-      0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-    </svg>
-  );
-
   return (
-    <main className="max-w-2xl mx-auto fade-in">
-      <section>
-        <h1 className="text-3xl text-center font-ruwudu font-semibold mb-6">Projects</h1>
-        <p className="text-gray-600 font-gulzar mb-6 tracking-wider dark:text-gray-300">
-          Here are the projects I've worked on. Click the GitHub icon to view the source code for each project.
-        </p>
+    <main id="main-content" className="container page-main fade-in">
+      <header className="page-heading">
+        <p className="eyebrow">Ideas into things</p>
+        <h1>Things I’ve built<span>.</span></h1>
+        <p>From hackathon experiments to everyday tools. Each project is a chance to learn something new and make something useful.</p>
+      </header>
+      <section aria-labelledby="all-projects-heading">
+        <h2 id="all-projects-heading" className="sr-only">All projects</h2>
+        <ProjectList projects={projects} />
       </section>
-      <section className="mt-12">
-        <ul className="mt-4 space-y-4">
-          <li className="flex items-center justify-between border-b pb-3">
-            <div>
-              <h3 className="font-medium font-ruwudu">Debate Arena</h3>
-              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Multi-agent AI web app where three agents debate topics in real time
-              </p>
-              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Built for MLH Global Hack Week: Agents
-              </p>
-            </div>
-            <a
-              href="https://github.com/hcrosby4236/debate-arena"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Debate Arena on GitHub"
-            >
-              {githubIcon}
-            </a>
-          </li>
-
-          <li className="flex items-center justify-between border-b pb-3">
-            <div>
-              <h3 className="font-medium font-ruwudu">Setlistics</h3>
-              <p className=" dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                A full-stack web app that turns concert setlist data into artist dashboards showing most-played songs, top touring cities, and tour-by-tour comparisons.
-              </p>
-            </div>
-            <a
-              href="https://github.com/hcrosby4236/setlistics"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Setlistics on GitHub"
-            >
-              {githubIcon}
-            </a>
-          </li>
-      
-          <li className="flex items-center justify-between border-b pb-3">
-            <div>
-              <h3 className="font-medium font-ruwudu">This Portfolio Site</h3>
-              <p className=" dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Next.js + React + Tailwind, built to learn and experiment
-              </p>
-            </div>
-            <a
-              href="https://github.com/hcrosby4236/portfolio-site"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Portfolio Site on GitHub"
-            >
-              {githubIcon}
-            </a>
-          </li>
-          <li className="flex items-center justify-between border-b pb-3">
-            <div>
-              <h3 className="font-medium font-ruwudu">School Planner</h3>
-              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                A desktop school planner built with Python, Tkinter, and SQLite for managing assignments, class schedules, and productivity. 
-              </p>
-              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                Plan to rework into a web app at some point.
-              </p>
-            </div>
-            <a
-              href="https://github.com/hcrosby4236/school-planner"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View School Planner on GitHub"
-            >
-              {githubIcon}
-            </a>
-            </li>
-          <li className="flex items-center justify-between border-b pb-3">
-            <div>
-              <h3 className="font-medium font-ruwudu">Python Console Games</h3>
-              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                A collection of interactive command-line games built with Python, featuring a branching adventure, cat simulator, and Rock, Paper, Scissors.
-              </p>
-            </div>
-            <a
-              href="https://github.com/hcrosby4236/python-console-games"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Python Console Games on GitHub"
-            >
-              {githubIcon}
-            </a>
-            </li>
-            <li className="flex items-center justify-between border-b pb-3">
-            <div>
-              <h3 className="font-medium font-ruwudu">Cat App</h3>
-              <p className="dark:text-gray-300 text-sm font-gulzar text-gray-600 mt-1">
-                A fun JavaScript web app that generates random cat images using a simple interactive interface. 
-              </p>
-            </div>
-            <a
-              href="https://github.com/hcrosby4236/cat-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Cat App on GitHub"
-            >
-              {githubIcon}
-            </a>
-            </li>
-
-            
-            
-        </ul>
-      </section>
+      <p className="endnote">Always learning. Always adding to the list.</p>
     </main>
   );
 }

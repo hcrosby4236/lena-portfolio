@@ -5,22 +5,26 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(false);
-
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    try {
+      const saved = localStorage.getItem("portfolio-theme");
+      setIsDark(saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches);
+    } catch {
+      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
     }
-  }, [isDark]);
-
-  return (
-    <ThemeContext.Provider value={{ isDark, setIsDark }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+    setLoaded(true);
+  }, []);
+  useEffect(() => {
+    if (!loaded) return;
+    document.documentElement.classList.toggle("dark", isDark);
+    try {
+      localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+    } catch {
+      // The toggle still works when browser storage is unavailable.
+    }
+  }, [isDark, loaded]);
+  return <ThemeContext.Provider value={{ isDark, setIsDark }}>{children}</ThemeContext.Provider>;
 }
 
-export function useTheme() {
-  return useContext(ThemeContext);
-}
+export function useTheme() { return useContext(ThemeContext); }

@@ -1,8 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function GameShelf() {
   const [selectedGame, setSelectedGame] = useState(null);
+  const dialogRef = useRef(null);
+  useEffect(() => {
+    if (selectedGame) dialogRef.current?.showModal();
+  }, [selectedGame]);
 
   const games = [
     {
@@ -76,62 +80,27 @@ export default function GameShelf() {
   ];
 
   return (
-    <div>
-      {/* The shelf */}
-      <div className="flex justify-center items-end gap-1 rounded-md p-3 pb-6 relative">
+    <div className="game-shelf">
+      <div className="game-spines">
         {games.map((game) => (
-          <button
-            key={game.title}
-            onClick={() => setSelectedGame(game)}
-            style={{ width: `${game.width}px` }}
-            className="transition-transform duration-200 hover:-translate-y-3 focus:outline-none flex-shrink-0"
-          >
-            <img
-              src={game.spine}
-              alt={game.title}
-              className="w-full h-auto rounded-sm"
-            />
+          <button key={game.title} onClick={() => setSelectedGame(game)} style={{ width: `${game.width}px` }} aria-label={`Read my thoughts on ${game.title}`}>
+            <img src={game.spine} alt={game.title} loading="lazy" />
           </button>
         ))}
       </div>
-
-      {/* Detail modal */}
       {selectedGame && (
-        <div
-          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6"
-          onClick={() => setSelectedGame(null)}
-        >
-          <div
-            className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-sm w-full text-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="aspect-[2/3] w-40 mx-auto mb-4 overflow-hidden rounded-lg">
-              <img
-                src={selectedGame.cover}
-                alt={selectedGame.title}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <h3 className="text-xl font-semibold">{selectedGame.title}</h3>
-            <p className="text-gray-600 dark:text-gray-300 mt-2">{selectedGame.blurb}</p>
-            {selectedGame.steamUrl && (
-              <a
-                href={selectedGame.steamUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 border rounded-lg px-4 py-2 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              >
-                View on Steam
-              </a>
-            )}
-            <button
-              onClick={() => setSelectedGame(null)}
-              className="block mx-auto mt-4 text-sm text-gray-500 dark:text-gray-400 hover:underline"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+        <dialog ref={dialogRef} className="game-modal" aria-labelledby="game-title" onClose={() => setSelectedGame(null)}
+          onClick={(event) => {
+            if (event.target !== event.currentTarget) return;
+            const bounds = event.currentTarget.getBoundingClientRect();
+            if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) event.currentTarget.close();
+          }}>
+          <img src={selectedGame.cover} alt={selectedGame.title} />
+          <h3 id="game-title">{selectedGame.title}</h3>
+          <p>{selectedGame.blurb}</p>
+          {selectedGame.steamUrl && <a className="button" href={selectedGame.steamUrl} target="_blank" rel="noopener noreferrer">View on Steam</a>}
+          <button className="close-button" onClick={() => dialogRef.current.close()}>Close</button>
+        </dialog>
       )}
     </div>
   );
