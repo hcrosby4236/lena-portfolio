@@ -8,9 +8,7 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="theme-toggle"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      aria-pressed={isDark}
+      className="text-sm font-medium transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 "
     >
       {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
     </button>

@@ -5,29 +5,35 @@ import { Cat } from "lucide-react";
 export default function CatGenerator() {
   const [catUrl, setCatUrl] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+
   async function getRandomCat() {
     setLoading(true);
-    setError("");
-    try {
-      const response = await fetch("https://api.thecatapi.com/v1/images/search");
-      if (!response.ok) throw new Error("Could not load a cat.");
-      const data = await response.json();
-      if (!data[0]?.url) throw new Error("No cat image returned.");
-      setCatUrl(data[0].url);
-    } catch {
-      setError("No cat just yet. Give it another try.");
-    } finally {
-      setLoading(false);
-    }
+    const res = await fetch("https://api.thecatapi.com/v1/images/search");
+    const data = await res.json();
+    setCatUrl(data[0].url);
+    setLoading(false);
   }
+
   return (
-    <div className="cat-generator" aria-busy={loading}>
-      {catUrl && <img key={catUrl} src={catUrl} alt="A randomly selected cat" onError={() => { setCatUrl(null); setError("That cat photo couldn’t load. Try another."); }} />}
-      <button onClick={getRandomCat} disabled={loading} className="button">
-        <Cat size={18} /> {loading ? "Finding a cat…" : catUrl ? "Another cat, please" : "Show me a cat"}
+    <div className="p-6 text-center">
+      {catUrl && (
+        <div className="h-80 flex items-center justify-center">
+        <img
+          key={catUrl}
+          src={catUrl}
+          alt="Random cat"
+          className="mx-auto max-h-80 max-w-full object-contain fade-in"
+        />
+        </div>
+      )}
+
+      <button
+        onClick={getRandomCat}
+        disabled={loading}
+        className="mt-4 text-blue-500 dark:text-white rounded-lg px-4 py-2 font-medium disabled:opacity-50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xlpx-6 "
+      >
+        {loading ? "meow.." : <Cat className="inline-block ml-2" />}
       </button>
-      <p className="error" role="status">{error}</p>
     </div>
   );
 }
