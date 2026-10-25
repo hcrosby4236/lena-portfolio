@@ -2,148 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ruwudu:wght@400;500;600;700&display=swap');
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Add your own plain CSS below if you don't want to use Tailwind
-   for something — both work fine together. */
-
-@keyframes float1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
+.particles-background {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-@keyframes float2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-40px, 30px) scale(1.05); }
-  66% { transform: translate(30px, -20px) scale(0.95); }
+.particles-background canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.blob {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(80px);
-  opacity: 0.6;
-  animation-name: hueShift;
-  animation-duration: 8s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+.site-content {
+  position: relative;
+  z-index: 1;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
+.particles-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Cases stay on the shelf while their cards open in a centered popup. */
-.game-flip-shelf {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  overflow-x: auto;
-  padding: 16px 8px 24px;
-  border-bottom: 3px solid currentColor;
-  scrollbar-width: thin;
-}
-
-.game-flip-shelf::before,
-.game-flip-shelf::after {
-  content: "";
-  flex: 1 0 0;
-}
-
-.game-shelf-case {
-  flex: 0 0 auto;
-  width: var(--spine-width);
-  border: 0;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.game-shelf-case img {
-  width: var(--spine-width);
-  height: auto;
-  max-width: none;
-  transition: transform 200ms ease;
-}
-
-.game-shelf-case:hover img {
-  transform: translateY(-10px);
-}
-
-.game-popup {
-  width: min(380px, calc(100% - 32px));
-  max-height: calc(100dvh - 48px);
-  margin: auto;
-  padding: 32px 24px 24px;
-  border: 1px solid #9ca3af;
-  border-radius: 14px;
-  overflow-y: auto;
-  text-align: center;
-  box-shadow: 0 20px 60px rgb(0 0 0 / 30%);
-}
-
-.game-popup::backdrop {
-  background: rgb(0 0 0 / 55%);
-}
-
-.game-popup[open] {
-  animation: gamePopupIn 350ms ease-out;
-}
-
-@keyframes gamePopupIn {
-  from { opacity: 0; transform: perspective(1000px) rotateY(-65deg) scale(.9); }
-  to { opacity: 1; transform: perspective(1000px) rotateY(0) scale(1); }
-}
-
-.game-popup-close {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 26px;
-  line-height: 1;
-}
-
-.game-popup-close:hover {
-  background: rgb(156 163 175 / 20%);
-}
-
-.game-popup-cover {
-  width: 140px;
-  height: 200px;
-  object-fit: contain;
-  margin: 0 auto 16px;
-  border-radius: 4px;
-}
-
-.game-popup-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.game-flip-shelf :focus-visible,
-.game-popup :focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .game-shelf-case img { transition: none; }
-  .game-popup[open] { animation: none; }
+.particles-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }

@@ -4,6 +4,7 @@ import { Gulzar } from 'next/font/google';
 import { Ruwudu } from 'next/font/google';
 import Nav from "./components/Nav";
 import { ThemeProvider } from "./context/ThemeContext";
+import ParticleBackground from "./components/ParticleBackground";
 
 const reenie = Reenie_Beanie({
   subsets: ["latin"],
@@ -32,31 +33,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${reenie.variable} ${gulzar.variable} ${ruwudu.variable}`} suppressHydrationWarning>
-      <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white relative overflow-x-hidden">
+    <html
+      lang="en"
+      className={`${reenie.variable} ${gulzar.variable} ${ruwudu.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white relative overflow-x-hidden fade-in">
         <ThemeProvider>
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div
-            className="blob bg-blue-500 w-96 h-96 top-0 left-0"
-            style={{ animation: "float1 12s ease-in-out infinite, hueShift 8s ease-in-out infinite" }}
-          />
-          <div
-            className="blob bg-cyan-500 w-80 h-80 top-1/2 right-0"
-            style={{ animation: "float2 14s ease-in-out infinite, hueShift 10s ease-in-out infinite" }}
-          />
-          <div
-            className="blob bg-blue-500 w-72 h-72 bottom-0 left-1/3"
-            style={{ animation: "float1 16s ease-in-out infinite reverse, hueShift 11s ease-in-out infinite" }}
-          />
-          <div
-            className="blob bg-pink-600 w-64 h-64 bottom-1/4 right-1/4"
-            style={{ animation: "float2 18s ease-in-out infinite reverse, hueShift 11s ease-in-out infinite" }}
-          />
-        </div>
+          <ParticleBackground />
 
-        <Nav />
-        {children}
-       </ThemeProvider>
+          <div className="site-content">
+            <Nav />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

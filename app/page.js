@@ -24,7 +24,7 @@ export default function Home() {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
              <img
-            src="/about1.jpg"
+            src="/epic_gate.jpg"
             alt="the gate at universal's epic universe"
             className="w-full rounded-lg object-cover"
           />
